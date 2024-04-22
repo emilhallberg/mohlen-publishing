@@ -1,12 +1,13 @@
 import Section from "@/components/Section";
 import Header from "@/components/Header";
 import Input from "@/components/Input";
+import Button from "@/components/Button";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <Header>Mohlén Publishing</Header>
-      <Section src="/ester-1.png" alt="Ester Mohlén">
+        <Section src="/ester-1.jpg" alt="Ester Mohlén">
         <b>Ester Mohlén</b>, född 22 juli 2006 i landskapet Hälsingland, närmare
         sagt i den lilla byn Njutånger. Under sitt liv har hon mestadels talat
         genom text och fantasi, i hennes svåra såväl lite bättre stunder. Men
@@ -14,7 +15,7 @@ export default function Home() {
         nystartade bolag Mohlén Publishing. Hon beskriver detta som ren eufori
         för en dröm som äntligen blir till verklighet.
       </Section>
-      <Section src="/book-1.png" alt="Philippe & Charlotte">
+      <Section src="/book-1.jpg" alt="Philippe & Charlotte">
         <b>Charlotte Campbell</b> är en ambitiös och vacker ung tjej som efter
         gymnasieexamen i Massachusetts 1970 väljer att lyssna pa sitt hjärta för
         första gängen någonsin genom att flytta till Verona i norra Italien. Där
@@ -28,7 +29,7 @@ export default function Home() {
         aldrig trott förtjänat. Frågan är bara om dess kärlek är större än det
         mänskliga livet och allt vad slutet av det.
       </Section>
-      <Section src="/ester-2.png" alt="Ester Mohlén">
+      <Section src="/ester-2.jpg" alt="Ester Mohlén">
         <b>Ester</b>, har sedan länge varit företagsam och drömt om ett eget
         bolag. Drömmen med Mohlén Publishing är att kunna livnära sig men hennes
         fokus är framförallt att fa tillbringa hennes tid med hennes passioner.
@@ -37,16 +38,13 @@ export default function Home() {
         och skriva, men framförallt visa att ingenting är omöjligt.
       </Section>
       <form className="w-full p-6 py-12 max-w-[1080px] grid auto-rows-max gap-12 grid-cols-1">
-        <Input type="text" name="name" autoComplete="name">
+        <Input type="text" name="name" autoComplete="name" required>
           Namn
         </Input>
-
-        <button
-          type="submit"
-          className="px-3 py-4 border border-orange-50 text-sm text-orange-50 hover:text-orange-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:border-orange-50"
-        >
-          Lägg beställning
-        </button>
+        <Input type="email" name="email" autoComplete="email" required>
+          Email
+        </Input>
+        <Button type="submit">Lägg beställning</Button>
       </form>
     </main>
   );
