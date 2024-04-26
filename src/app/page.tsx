@@ -2,12 +2,13 @@ import Section from "@/components/Section";
 import Header from "@/components/Header";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import OrderForm from "@/compounds/OrderForm";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="grid auto-rows-max-content justify-center min-h-screen">
       <Header>Mohlén Publishing</Header>
-        <Section src="/ester-1.jpg" alt="Ester Mohlén">
+      <Section src="/ester-1.jpg" alt="Ester Mohlén">
         <b>Ester Mohlén</b>, född 22 juli 2006 i landskapet Hälsingland, närmare
         sagt i den lilla byn Njutånger. Under sitt liv har hon mestadels talat
         genom text och fantasi, i hennes svåra såväl lite bättre stunder. Men
@@ -37,15 +38,18 @@ export default function Home() {
         verk samtidigt som hon vill inspirera andra individer till att både läsa
         och skriva, men framförallt visa att ingenting är omöjligt.
       </Section>
-      <form className="w-full p-6 py-12 max-w-[1080px] grid auto-rows-max gap-12 grid-cols-1">
+      <OrderForm>
         <Input type="text" name="name" autoComplete="name" required>
           Namn
         </Input>
         <Input type="email" name="email" autoComplete="email" required>
           Email
         </Input>
+        <Input type="number" name="quantity" required defaultValue={1}>
+          Antal
+        </Input>
         <Button type="submit">Lägg beställning</Button>
-      </form>
+      </OrderForm>
     </main>
   );
 }
