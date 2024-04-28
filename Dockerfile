@@ -5,7 +5,7 @@ COPY package.json package-lock.json ./
 RUN npm install
 COPY src ./src
 COPY public ./public
-COPY ./next-env.d.ts ./next.config.mjs ./package.json ./tsconfig.json ./package-lock.json ./tailwind.config.ts ./postcss.config.js ./
+COPY ./next.config.mjs ./package.json ./tsconfig.json ./package-lock.json ./tailwind.config.ts ./postcss.config.js ./
 
 ARG EMAIL_USERNAME
 ENV EMAIL_USERNAME=$EMAIL_USERNAME
