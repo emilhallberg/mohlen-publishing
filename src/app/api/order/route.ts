@@ -16,6 +16,7 @@ export const POST = async (request: NextRequest) => {
 
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
+  const phone = formData.get("phone") as string;
   const quantity = formData.get("quantity") as string;
 
   if (!name || !email || !quantity) {
@@ -32,6 +33,7 @@ export const POST = async (request: NextRequest) => {
     Kontaktuppgifter till köpare:
     Namn: ${name}
     Email: ${email}
+    Telefon: ${phone}
   `;
 
   const result = await transport.sendMail({

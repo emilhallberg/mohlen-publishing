@@ -1,8 +1,15 @@
 import Section from "@/components/Section";
 import Header from "@/components/Header";
-import Input from "@/components/Input";
 import Button from "@/components/Button";
-import OrderForm from "@/compounds/OrderForm";
+import { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Mohlén Publishing",
+  icons: [{ rel: "icon", url: "/ester-1.jpg" }],
+  description:
+    "Drömmen med Mohlén Publishing är att kunna livnära sig men hennes fokus är framförallt att få tillbringa hennes tid med hennes passioner. Genom Mohlén Publishing kommer Ester att marknadsföra sina litterära verk samtidigt som hon vill inspirera andra individer till att både läsa och skriva, men framförallt visa att ingenting är omöjligt.",
+};
 
 export default function Home() {
   return (
@@ -23,33 +30,24 @@ export default function Home() {
         ska hon studera till litteratur-och historielärare samtidigt som hon har
         en vilja att uppleva något mer än bara hennes hemstat. I drömmarnas land
         finner hon inte bara sitt inre jag utan även den charmiga Phillipe
-        Ricci, fran första ögonkastet faller de för varandra och tillsammans
+        Ricci, från första ögonkastet faller de för varandra och tillsammans
         blir de oövervinneliga trots den dramatik som härjar runt omkring.
         Phillipe & Charlotte är definitionen av evig och äkta kärlek,
-        tillsammans far vi följa deras vackra historia till ett liv de bada
+        tillsammans får vi följa deras vackra historia till ett liv de bada
         aldrig trott förtjänat. Frågan är bara om dess kärlek är större än det
         mänskliga livet och allt vad slutet av det.
+        <Link href="/philippe-and-charlotte" className="flex pt-4">
+          <Button>Beställ här</Button>
+        </Link>
       </Section>
       <Section src="/ester-2.jpg" alt="Ester Mohlén">
         <b>Ester</b>, har sedan länge varit företagsam och drömt om ett eget
         bolag. Drömmen med Mohlén Publishing är att kunna livnära sig men hennes
-        fokus är framförallt att fa tillbringa hennes tid med hennes passioner.
+        fokus är framförallt att få tillbringa hennes tid med hennes passioner.
         Genom Mohlén Publishing kommer Ester att marknadsföra sina litterära
         verk samtidigt som hon vill inspirera andra individer till att både läsa
         och skriva, men framförallt visa att ingenting är omöjligt.
       </Section>
-      <OrderForm>
-        <Input type="text" name="name" autoComplete="name" required>
-          Namn
-        </Input>
-        <Input type="email" name="email" autoComplete="email" required>
-          Email
-        </Input>
-        <Input type="number" name="quantity" required defaultValue={1}>
-          Antal
-        </Input>
-        <Button type="submit">Lägg beställning</Button>
-      </OrderForm>
     </main>
   );
 }
