@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Philippe & Charlotte",
+  title: "Phillipe & Charlotte",
   icons: [{ rel: "icon", url: "/book-1.jpg" }],
   description:
     "Charlotte Campbell är en ambitiös och vacker ung tjej som efter gymnasieexamen i Massachusetts 1970 väljer att lyssna pa sitt hjärta för första gängen någonsin genom att flytta till Verona i norra Italien. Där ska hon studera till litteratur-och historielärare samtidigt som hon har en vilja att uppleva något mer än bara hennes hemstat.",
@@ -18,7 +18,7 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1">
-        Beställ Philippe & Charlotte
+        Beställ Phillipe & Charlotte
       </h1>
       <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
         <p className="mt-3">

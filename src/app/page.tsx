@@ -23,7 +23,7 @@ export default function Home() {
         nystartade bolag Mohlén Publishing. Hon beskriver detta som ren eufori
         för en dröm som äntligen blir till verklighet.
       </Section>
-      <Section src="/book-1.jpg" alt="Philippe & Charlotte">
+      <Section src="/book-1.jpg" alt="Phillipe & Charlotte">
         <b>Charlotte Campbell</b> är en ambitiös och vacker ung tjej som efter
         gymnasieexamen i Massachusetts 1970 väljer att lyssna pa sitt hjärta för
         första gängen någonsin genom att flytta till Verona i norra Italien. Där
@@ -36,7 +36,7 @@ export default function Home() {
         tillsammans får vi följa deras vackra historia till ett liv de bada
         aldrig trott förtjänat. Frågan är bara om dess kärlek är större än det
         mänskliga livet och allt vad slutet av det.
-        <Link href="/philippe-and-charlotte" className="flex pt-4">
+        <Link href="/phillipe-and-charlotte" className="flex pt-4">
           <Button>Beställ här</Button>
         </Link>
       </Section>

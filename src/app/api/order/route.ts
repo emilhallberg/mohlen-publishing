@@ -25,10 +25,10 @@ export const POST = async (request: NextRequest) => {
 
   const orderId = Date.now();
 
-  const subject = `ORDER [${orderId}] - Philippe & Charlotte - ${quantity}`;
+  const subject = `ORDER [${orderId}] - Phillipe & Charlotte - ${quantity}`;
 
   const text = `
-    En beställning på ${quantity} exemplar har lagts på Philippe & Charlotte.
+    En beställning på ${quantity} exemplar har lagts på Phillipe & Charlotte.
     
     Kontaktuppgifter till köpare:
     Namn: ${name}
