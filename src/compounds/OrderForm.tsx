@@ -17,9 +17,11 @@ const MailLink = () => (
 
 export default function OrderForm({ children }: Props) {
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
+    setLoading(true);
     event.preventDefault();
     setSuccess(false);
     setError(false);
@@ -34,6 +36,9 @@ export default function OrderForm({ children }: Props) {
       .catch((reason) => {
         setError(true);
         console.error(reason);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }
 
@@ -45,6 +50,14 @@ export default function OrderForm({ children }: Props) {
         <br />
         <br />
         <Button onClick={() => setError(false)}>Testa igen</Button>
+      </p>
+    );
+  }
+
+  if (loading) {
+    return (
+      <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
+        Lägger beställning...
       </p>
     );
   }

@@ -3,6 +3,7 @@ import mail from "nodemailer";
 
 const transport = mail.createTransport({
   service: "gmail",
+  port: 587,
   auth: {
     user: process.env.EMAIL_USERNAME,
     pass: process.env.EMAIL_PASSWORD,
