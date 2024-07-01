@@ -7,10 +7,10 @@ import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
 
 export const metadata: Metadata = {
-  title: "Phillipe & Charlotte",
-  icons: [{ rel: "icon", url: "/book-1.jpg" }],
+  title: "Midnattsregn",
+  icons: [{ rel: "icon", url: "/book-2.png" }],
   description:
-    "Charlotte Campbell är en ambitiös och vacker ung tjej som efter gymnasieexamen i Massachusetts 1970 väljer att lyssna pa sitt hjärta för första gängen någonsin genom att flytta till Verona i norra Italien. Där ska hon studera till litteratur-och historielärare samtidigt som hon har en vilja att uppleva något mer än bara hennes hemstat.",
+    "Margaret Love lever med en lyhörd tystnad och ett osynligt hopp inom sig. En natt i midnatts regnet möter hon Nicolas Scott som snabbt blir hennes allting. Livet blir plötsligt värt att leva, bara tanken av honom får henne att le. Från ingenstans vänder deras kärleksfulla relation lika snabbt som ett midnatts regn. Trots detta så slutar Margaret inte att kämpa, hon har ju lovat honom att stanna kvar oavsett vad. ",
 };
 
 export default function Book() {
