@@ -18,7 +18,7 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1">
-        Beställ Phillipe & Charlotte
+        Beställ Phillipe & Charlotte  - 229 kr
       </h1>
       <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
         <p className="mt-3">

@@ -19,7 +19,7 @@ export default function Book() {
       <Link href="/" className="text-sm px-6 pt-4 hover:text-orange-200">
         Tillbaka till startsidan
       </Link>
-      <h1 className="flex text-3xl w-full p-6 pt-1">Förboka Midnattsregn</h1>
+      <h1 className="flex text-3xl w-full p-6 pt-1">Förboka Midnattsregn - 189 kr</h1>
       <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
         <p className="mt-3">
           <b>Margaret Love</b> lever med en lyhörd tystnad och ett osynligt hopp
