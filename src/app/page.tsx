@@ -32,7 +32,7 @@ export default function Home() {
         Margaret inte att kämpa, hon har ju lovat honom att stanna kvar oavsett
         vad.
         <Link href="/midnattsregn" className="flex pt-4">
-          <Button>Förboka här</Button>
+          <Button>Beställ här</Button>
         </Link>
       </Section>
       <Section src="/book-1.jpg" alt="Phillipe & Charlotte">

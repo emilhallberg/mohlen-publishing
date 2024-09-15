@@ -5,6 +5,7 @@ import Link from "next/link";
 import PrebookForm from "@/compounds/PrebookForm";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
+import OrderForm from "@/compounds/OrderForm";
 
 export const metadata: Metadata = {
   title: "Midnattsregn",
@@ -19,7 +20,9 @@ export default function Book() {
       <Link href="/" className="text-sm px-6 pt-4 hover:text-orange-200">
         Tillbaka till startsidan
       </Link>
-      <h1 className="flex text-3xl w-full p-6 pt-1">Förboka Midnattsregn - 189 kr</h1>
+      <h1 className="flex text-3xl w-full p-6 pt-1">
+        Beställ Midnattsregn - 189 kr
+      </h1>
       <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
         <p className="mt-3">
           <b>Margaret Love</b> lever med en lyhörd tystnad och ett osynligt hopp
@@ -32,16 +35,17 @@ export default function Book() {
         </p>
         <span className="border-b border-orange-50 lg:mt-6 w-20 justify-self-center" />
         <p className="mt-3">
-          Fyll i formuläret nedan för att förboka. Efter att du har skickat in
-          din beställning, kommer vi att kontakta dig inom kort för att förse
-          dig med ytterligare information om leverans och betalningsmetoder. Jag
-          strävar alltid efter att göra din upplevelse så smidig som möjligt, så
-          tveka inte att dela med dig av eventuella specifika önskemål eller
-          frågor du kan ha.
+          Fyll i formuläret nedan för att lägga en beställning. Efter att du har
+          skickat in din beställning, kommer vi att kontakta dig inom kort för
+          att förse dig med ytterligare information om leveransalternativ och
+          betalningsmetoder. Jag strävar alltid efter att göra din upplevelse så
+          smidig som möjligt, så tveka inte att dela med dig av eventuella
+          specifika önskemål eller frågor du kan ha.
         </p>
       </article>
 
-      <PrebookForm>
+      <OrderForm>
+        <Input name="product" defaultValue="Midnattsregn" hidden />
         <Input type="text" name="name" autoComplete="name" required>
           Namn
         </Input>
@@ -55,13 +59,13 @@ export default function Book() {
           Antal
         </Input>
         <Select label="Leveranssätt" name="delivery">
-          <option value="Postnord">Postnord</option>
+          <option value="Postnord">Postnord - 19kr</option>
           <option value="Avhämtning">Avhämtning</option>
           <option value="Annat">Annat</option>
         </Select>
         <Textarea name="comment">Övriga önskemål</Textarea>
         <Button type="submit">Lägg beställning</Button>
-      </PrebookForm>
+      </OrderForm>
     </main>
   );
 }

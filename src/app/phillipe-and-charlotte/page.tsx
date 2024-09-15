@@ -3,6 +3,8 @@ import Button from "@/components/Button";
 import OrderForm from "@/compounds/OrderForm";
 import { Metadata } from "next";
 import Link from "next/link";
+import Select from "@/components/Select";
+import Textarea from "@/components/Textarea";
 
 export const metadata: Metadata = {
   title: "Phillipe & Charlotte",
@@ -18,7 +20,7 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1">
-        Beställ Phillipe & Charlotte  - 229 kr
+        Beställ Phillipe & Charlotte - 229 kr
       </h1>
       <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
         <p className="mt-3">
@@ -41,12 +43,13 @@ export default function Book() {
           skickat in din beställning, kommer vi att kontakta dig inom kort för
           att förse dig med ytterligare information om leveransalternativ och
           betalningsmetoder. Jag strävar alltid efter att göra din upplevelse så
-          smidig som möjligt, så tveka inte att dela med dig av
-          eventuella specifika önskemål eller frågor du kan ha.
+          smidig som möjligt, så tveka inte att dela med dig av eventuella
+          specifika önskemål eller frågor du kan ha.
         </p>
       </article>
 
       <OrderForm>
+        <Input name="product" defaultValue="Phillipe & Charlotte" hidden />
         <Input type="text" name="name" autoComplete="name" required>
           Namn
         </Input>
@@ -59,6 +62,12 @@ export default function Book() {
         <Input type="number" name="quantity" required defaultValue={1}>
           Antal
         </Input>
+        <Select label="Leveranssätt" name="delivery">
+          <option value="Postnord">Postnord - 19kr</option>
+          <option value="Avhämtning">Avhämtning</option>
+          <option value="Annat">Annat</option>
+        </Select>
+        <Textarea name="comment">Övriga önskemål</Textarea>
         <Button type="submit">Lägg beställning</Button>
       </OrderForm>
     </main>
