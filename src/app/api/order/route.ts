@@ -17,10 +17,13 @@ export const POST = async (request: NextRequest) => {
 
   const formData = await request.formData();
 
+  const product = formData.get("product") as string;
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const phone = formData.get("phone") as string;
   const quantity = formData.get("quantity") as string;
+  const delivery = formData.get("delivery") as string;
+  const comment = formData.get("comment") as string;
 
   if (!name || !email || !quantity) {
     return NextResponse.json({ message: "Invalid order" }, { status: 500 });
@@ -28,7 +31,7 @@ export const POST = async (request: NextRequest) => {
 
   const orderId = Date.now();
 
-  const subject = `ORDER [${orderId}] - Phillipe & Charlotte - ${quantity}`;
+  const subject = `ORDER [${orderId}] - ${product} - ${quantity}`;
 
   const text = `
     En beställning på ${quantity} exemplar har lagts på Phillipe & Charlotte.
@@ -37,6 +40,10 @@ export const POST = async (request: NextRequest) => {
     Namn: ${name}
     Email: ${email}
     Telefon: ${phone}
+    
+    Leverans: ${delivery}
+    
+    Övriga önskemål: ${comment}
   `;
 
   const result = await transport.sendMail({
