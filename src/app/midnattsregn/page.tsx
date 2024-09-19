@@ -59,7 +59,7 @@ export default function Book() {
           Antal
         </Input>
         <Select label="Leveranssätt" name="delivery">
-          <option value="Postnord">Postnord - 19kr</option>
+          <option value="Postnord">Postnord - 35kr</option>
           <option value="Avhämtning">Avhämtning</option>
           <option value="Annat">Annat</option>
         </Select>
