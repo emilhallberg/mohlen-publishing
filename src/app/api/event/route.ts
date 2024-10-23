@@ -13,35 +13,31 @@ const transport = mail.createTransport({
 });
 
 export const POST = async (request: NextRequest) => {
-  console.info("Placing order");
+  console.info("Placing event");
 
   const formData = await request.formData();
 
-  const product = formData.get("product") as string;
+  const event = formData.get("event") as string;
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const phone = formData.get("phone") as string;
-  const quantity = formData.get("quantity") as string;
-  const delivery = formData.get("delivery") as string;
   const comment = formData.get("comment") as string;
 
-  if (!name || !email || !quantity) {
-    return NextResponse.json({ message: "Invalid order" }, { status: 500 });
+  if (!name || !email) {
+    return NextResponse.json({ message: "Invalid event" }, { status: 500 });
   }
 
-  const orderId = Date.now();
+  const eventId = Date.now();
 
-  const subject = `ORDER [${orderId}] - ${product} - ${quantity}`;
+  const subject = `EVENT [${eventId}] - ${event}`;
 
   const text = `
-    En beställning på ${quantity} exemplar har lagts på ${product}.
+    En förbokning på har lagts på ${event}.
     
     Kontaktuppgifter till köpare:
     Namn: ${name}
     Email: ${email}
     Telefon: ${phone}
-    
-    Leverans: ${delivery}
     
     Övriga önskemål: ${comment}
   `;
@@ -54,10 +50,10 @@ export const POST = async (request: NextRequest) => {
   });
 
   if (result.rejected.length) {
-    console.info("Order not placed");
+    console.info("Event not placed");
     return NextResponse.json({ message: "Mail not sent" }, { status: 500 });
   }
 
-  console.info("Order placed");
+  console.info("Event placed");
   return NextResponse.json({ message: "Mail sent" }, { status: 200 });
 };
