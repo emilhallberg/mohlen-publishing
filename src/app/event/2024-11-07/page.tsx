@@ -37,6 +37,12 @@ export default function Event() {
         </p>
         <span className="border-b border-orange-50 lg:mt-6 w-20 justify-self-center" />
         <p className="mt-3">
+          <b>Var?</b> TeWe&apos;s konditori på Storgatan 20 i Hudiksvall
+          <br />
+          <b>När?</b> Den 7 november 2024 klockan 18-20
+        </p>
+        <span className="border-b border-orange-50 lg:mt-6 w-20 justify-self-center" />
+        <p className="mt-3">
           Det kostar 149kr för entré, höstig soppa med färskt bröd och något
           sött som avslutning! Säkra din plats genom att förboka anmäla dig via
           formuläret nedan. Jag strävar alltid efter att göra din upplevelse så
