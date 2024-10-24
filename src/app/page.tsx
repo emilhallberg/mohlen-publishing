@@ -23,6 +23,19 @@ export default function Home() {
         nystartade bolag Mohlén Publishing. Hon beskriver detta som ren eufori
         för en dröm som äntligen blir till verklighet.
       </Section>
+      <Section src="/ester-3.jpg" alt="Ester Mohlén">
+        <b>Författaren Ester Mohlén</b> besöker TeWe&apos;s konditori på
+        Storgatan i Hudiksvall. Det kommer bland annat att bjudas på höstig
+        soppa med färskt bröd, avslutningsvis kaffe med några av TeWe&apos;s
+        fantastiska bakverk. De som medverkar kommer att få höra delar ur hennes
+        nya roman Midnattsregn, som följs av diskussioner i form av frågor till
+        Ester och valfritt medverkande av gästerna som befinner sig på
+        TeWe&apos;s. Boken tar bland annat upp ämnen som relationsvåld, missbruk
+        och psykisk ohälsa.
+        <Link href="/event/2024-11-07" className="flex pt-4">
+          <Button>Förboka här</Button>
+        </Link>
+      </Section>
       <Section src="/book-2.png" alt="Midnattsregn">
         <b>Margaret Love</b> lever med en lyhörd tystnad och ett osynligt hopp
         inom sig. En natt i midnatts regnet möter hon Nicolas Scott som snabbt
