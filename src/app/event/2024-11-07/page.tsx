@@ -2,10 +2,7 @@ import Input from "@/components/Input";
 import Button from "@/components/Button";
 import { Metadata } from "next";
 import Link from "next/link";
-import PrebookForm from "@/compounds/PrebookForm";
-import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
-import OrderForm from "@/compounds/OrderForm";
 import EventForm from "@/compounds/EventForm";
 
 export const metadata: Metadata = {
@@ -50,7 +47,6 @@ export default function Event() {
           specifika önskemål eller frågor du kan ha.
         </p>
       </article>
-
       <EventForm>
         <Input
           name="event"

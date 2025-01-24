@@ -2,7 +2,6 @@ import Input from "@/components/Input";
 import Button from "@/components/Button";
 import { Metadata } from "next";
 import Link from "next/link";
-import PrebookForm from "@/compounds/PrebookForm";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
 import OrderForm from "@/compounds/OrderForm";
@@ -17,10 +16,10 @@ export const metadata: Metadata = {
 export default function Book() {
   return (
     <main className="grid auto-rows-max-content justify-center gap-8">
-      <Link href="/" className="text-sm px-6 pt-4 hover:text-orange-200">
+      <Link href="/public" className="text-sm px-6 pt-4 hover:text-orange-200">
         Tillbaka till startsidan
       </Link>
-      <h1 className="flex text-3xl w-full p-6 pt-1">
+      <h1 className="flex text-3xl w-full p-6 pt-1 text-orange-50">
         Beställ Midnattsregn - 189 kr
       </h1>
       <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
@@ -33,7 +32,13 @@ export default function Book() {
           Margaret inte att kämpa, hon har ju lovat honom att stanna kvar
           oavsett vad.
         </p>
-        <span className="border-b border-orange-50 lg:mt-6 w-20 justify-self-center" />
+        <blockquote className="mt-3 pl-4 pr-4 text-center">
+          <p>Kommentar från läsare</p>
+          &#34;Midnattsregn är en mycket djup och emotionell bok som tar en
+          genom en resa med starka känslor av glädje, sorg, ilska, kärlek och
+          igenkänning. Vackert beskrivet där man verkligen kan känna vad
+          huvudkaraktären känner!&#34;
+        </blockquote>
         <p className="mt-3">
           Fyll i formuläret nedan för att lägga en beställning. Efter att du har
           skickat in din beställning, kommer vi att kontakta dig inom kort för
@@ -43,7 +48,6 @@ export default function Book() {
           specifika önskemål eller frågor du kan ha.
         </p>
       </article>
-
       <OrderForm>
         <Input name="product" defaultValue="Midnattsregn" hidden />
         <Input type="text" name="name" autoComplete="name" required>
