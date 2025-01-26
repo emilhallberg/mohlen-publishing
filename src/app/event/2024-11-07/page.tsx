@@ -63,7 +63,7 @@ export default function Event() {
           Telefon
         </Input>
         <Textarea name="comment">Övriga önskemål</Textarea>
-        <Button type="submit">Lägg beställning</Button>
+        <Button type="submit">Anmäl mig</Button>
       </EventForm>
     </main>
   );

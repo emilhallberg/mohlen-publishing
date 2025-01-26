@@ -5,7 +5,7 @@ import Form from "@/components/Form";
 import Link from "next/link";
 import Button from "@/components/Button";
 
-type Props = { children: ReactNode };
+type Props = { children: ReactNode; hidden?: boolean };
 
 const MAIL = "ester.mohlen@gmail.com";
 
@@ -15,7 +15,7 @@ const MailLink = () => (
   </Link>
 );
 
-export default function EventForm({ children }: Props) {
+export default function EventForm({ children, hidden = false }: Props) {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -41,6 +41,8 @@ export default function EventForm({ children }: Props) {
         setLoading(false);
       });
   }
+
+  if (hidden) return null;
 
   if (error) {
     return (

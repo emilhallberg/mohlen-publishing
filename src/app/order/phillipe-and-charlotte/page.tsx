@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
+import Section from "@/components/Section";
 
 export const metadata: Metadata = {
   title: "Phillipe & Charlotte",
@@ -16,14 +17,14 @@ export const metadata: Metadata = {
 export default function Book() {
   return (
     <main className="grid auto-rows-max-content justify-center gap-8">
-      <Link href="/public" className="text-sm px-6 pt-4 hover:text-orange-200">
+      <Link href="/" className="text-sm px-6 pt-4 hover:text-orange-200">
         Tillbaka till startsidan
       </Link>
-      <h1 className="flex text-3xl w-full p-6 pt-1 text-orange-50">
+      <h1 className="flex text-3xl w-full p-6 pt-1 pb-1 text-orange-50">
         Beställ Phillipe & Charlotte - 229 kr
       </h1>
-      <article className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px]">
-        <p className="mt-3">
+      <Section src="/phillipe-and-charlotte.png" alt="Phillipe & Charlotte">
+        <p>
           <b>Charlotte Campbell</b> är en ambitiös och vacker ung tjej som efter
           gymnasieexamen i Massachusetts 1970 väljer att lyssna pa sitt hjärta
           för första gängen någonsin genom att flytta till Verona i norra
@@ -37,13 +38,13 @@ export default function Book() {
           liv de bada aldrig trott förtjänat. Frågan är bara om dess kärlek är
           större än det mänskliga livet och allt vad slutet av det.
         </p>
-        <blockquote className="mt-3 pl-4 pr-4 text-center">
+        <blockquote className="text-center">
           <p>Kommentar från läsare</p>
           &#34;Fràn första sidan fastnade jag i boken och ville bara fortsätta
           läsa. När jag var tvungen att lägga ner den sä blev jag besviken för
           att jag bara ville fortsätta&#34;
         </blockquote>
-        <p className="mt-3">
+        <p>
           Fyll i formuläret nedan för att lägga en beställning. Efter att du har
           skickat in din beställning, kommer vi att kontakta dig inom kort för
           att förse dig med ytterligare information om leveransalternativ och
@@ -51,7 +52,7 @@ export default function Book() {
           smidig som möjligt, så tveka inte att dela med dig av eventuella
           specifika önskemål eller frågor du kan ha.
         </p>
-      </article>
+      </Section>
 
       <OrderForm>
         <Input name="product" defaultValue="Phillipe & Charlotte" hidden />

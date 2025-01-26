@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function Book() {
   return (
     <main className="grid auto-rows-max-content justify-center gap-8">
-      <Link href="/public" className="text-sm px-6 pt-4 hover:text-orange-200">
+      <Link href="/" className="text-sm px-6 pt-4 hover:text-orange-200">
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1 text-orange-50">

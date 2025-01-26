@@ -8,6 +8,8 @@ import ContactForm from "@/compounds/ContactForm";
 import Input from "@/components/Input";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
+import Preview from "@/components/Preview";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Mohlén Publishing",
@@ -95,30 +97,78 @@ export default function Home() {
           <Button>Beställ här</Button>
         </Link>
       </Section>
-      <ContactForm>
-        <SubHeader id="kontakt">Kontakt</SubHeader>
-        <p className="text-orange-50">
-          Vänligen fyll i formuläret nedan om du har frågor gällande
-          beställningar, vill ge feedback på något av Esters litterära verk
-          eller en övrig fråga. Tack för att du hjälper oss utvecklas!
-        </p>
-        <Input type="text" name="name" autoComplete="name" required>
-          Namn
-        </Input>
-        <Input type="email" name="email" autoComplete="email" required>
-          Email
-        </Input>
-        <Input type="tel" name="phone" autoComplete="tel" required>
-          Telefon
-        </Input>
-        <Select label="Vad gäller ärendet?" name="topic" required>
-          <option value="Kundservice">Kundservice</option>
-          <option value="Recension">Recension</option>
-          <option value="Övriga frågor">Övriga frågor</option>
-        </Select>
-        <Textarea name="comment">Meddelande</Textarea>
-        <Button type="submit">Skicka</Button>
-      </ContactForm>
+
+      <SubHeader id="event" className="p-6">
+        Event
+      </SubHeader>
+      <section className="w-full p-6 max-w-[1080px] grid gap-6 content-start">
+        <span className="flex flex-wrap gap-3">
+          <div className="grid w-[330px] gap-3">
+            <Image
+              className="w-full h-auto"
+              src="/2025-02-20.png"
+              alt="2025-02-20"
+              width={0}
+              height={0}
+              sizes="350"
+              priority
+            />
+            <Link href="/event/2025-02-20" className="w-full">
+              <Button>Läs mer</Button>
+            </Link>
+          </div>
+          <div className="grid w-[330px] gap-3">
+            <Image
+              className="w-full h-auto"
+              src="/2025-03-13.png"
+              alt="2025-03-13"
+              width={0}
+              height={0}
+              sizes="350"
+              priority
+            />
+            <Link href="/event/2025-03-13" className="w-full">
+              <Button>Läs mer</Button>
+            </Link>
+          </div>
+        </span>
+      </section>
+
+      <section className="w-full p-6 py-12 max-w-[1080px] grid gap-6 content-start">
+        <SubHeader id="media">Media</SubHeader>
+        <span className="flex-wrap gap-3 content-between flex">
+          <Preview url="https://www.ht.se/2024-10-08/18-ariga-ester-ger-ut-sin-andra-roman" />
+          <Preview url="https://www.ht.se/2024-03-31/17-ariga-ester-ger-ut-en-egen-karleksroman" />
+          <Preview url="https://www.madeleineengberg.com" />
+        </span>
+      </section>
+
+      <div className="h-svh">
+        <ContactForm>
+          <SubHeader id="kontakt">Kontakt</SubHeader>
+          <p className="text-orange-50">
+            Vänligen fyll i formuläret nedan om du har frågor gällande
+            beställningar, vill ge feedback på något av Esters litterära verk
+            eller en övrig fråga. Tack för att du hjälper oss utvecklas!
+          </p>
+          <Input type="text" name="name" autoComplete="name" required>
+            Namn
+          </Input>
+          <Input type="email" name="email" autoComplete="email" required>
+            Email
+          </Input>
+          <Input type="tel" name="phone" autoComplete="tel" required>
+            Telefon
+          </Input>
+          <Select label="Vad gäller ärendet?" name="topic" required>
+            <option value="Kundservice">Kundservice</option>
+            <option value="Recension">Recension</option>
+            <option value="Övriga frågor">Övriga frågor</option>
+          </Select>
+          <Textarea name="comment">Meddelande</Textarea>
+          <Button type="submit">Skicka</Button>
+        </ContactForm>
+      </div>
     </main>
   );
 }

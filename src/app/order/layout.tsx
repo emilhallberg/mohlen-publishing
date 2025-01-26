@@ -8,7 +8,7 @@ export default function OrderLayout({
   return (
     <>
       {children}
-      <section className="grid gap-4 p-8">
+      <section className="grid auto-rows-max gap-4 p-6 pt-2 text-orange-50 text-justify lg:text-left max-w-[1080px] m-auto">
         <h1 className="text-3xl text-orange-50 ">Ordervillkor</h1>
         <ul className="text-orange-50">
           <li>~ Fri returrätt med direkt återbetalning.</li>

@@ -22,8 +22,10 @@ export default function RootLayout({
       <body className={playfair.className}>
         <nav className="flex gap-3 uppercase justify-center p-4 sticky top-0 z-20">
           <Link href="/">Hem</Link>
-          <Link href="/#kontakt">Kontakt</Link>
           <Link href="/#order">Order</Link>
+          <Link href="/#event">Event</Link>
+          <Link href="/#media">Media</Link>
+          <Link href="/#kontakt">Kontakt</Link>
         </nav>
         {children}
       </body>

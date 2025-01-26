@@ -24,7 +24,7 @@ export default function Section({
   );
 
   const content = (
-    <article className="grid auto-rows-max gap-4 mt-6 text-orange-50 text-justify lg:text-left">
+    <article className="grid auto-rows-max gap-4 text-orange-50 text-justify lg:text-left">
       {children}
     </article>
   );
@@ -39,7 +39,7 @@ export default function Section({
   }
 
   return (
-    <section className="p-6 grid auto-rows-max gap-8 lg:gap-12 sm:grid-flow-col sm:grid-cols-[minmax(300px,2fr)_minmax(300px,_3fr)] max-w-[1080px] mb-24">
+    <section className="p-6 grid auto-rows-max gap-8 lg:gap-12 sm:grid-flow-col sm:grid-cols-[minmax(300px,2fr)_minmax(300px,_3fr)] max-w-[1080px]">
       {image}
       {content}
     </section>
