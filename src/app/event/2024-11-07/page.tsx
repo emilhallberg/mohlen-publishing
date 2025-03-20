@@ -6,10 +6,10 @@ import Textarea from "@/components/Textarea";
 import EventForm from "@/compounds/EventForm";
 
 export const metadata: Metadata = {
-  title: "Författarbesök TeWe&apos;s konditori",
+  title: "Författarbesök TeWe's konditori",
   icons: [{ rel: "icon", url: "/ester-1.png" }],
   description:
-    "Författaren Ester Mohlén besöker TeWe&apos;s konditori på Storgatan i Hudiksvall. Det kommer bland annat att bjudas på höstig soppa med färskt bröd, avslutningsvis kaffe med några av TeWe&apos;s fantastiska bakverk. De som medverkar kommer att få höra delar ur hennes nya roman Midnattsregn, som följs av diskussioner i form av frågor till Ester och valfritt medverkande av gästerna som befinner sig på TeWe&apos;s. Boken tar bland annat upp ämnen som relationsvåld, missbruk och psykisk ohälsa.",
+    "Författaren Ester Mohlén besöker TeWe's konditori på Storgatan i Hudiksvall. Det kommer bland annat att bjudas på höstig soppa med färskt bröd, avslutningsvis kaffe med några av TeWe's fantastiska bakverk. De som medverkar kommer att få höra delar ur hennes nya roman Midnattsregn, som följs av diskussioner i form av frågor till Ester och valfritt medverkande av gästerna som befinner sig på TeWe's. Boken tar bland annat upp ämnen som relationsvåld, missbruk och psykisk ohälsa.",
 };
 
 export default function Event() {

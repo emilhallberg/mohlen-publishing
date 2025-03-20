@@ -7,7 +7,7 @@ import EventForm from "@/compounds/EventForm";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Författarbesök TeWe';s konditori",
+  title: "Författarbesök TeWe's konditori",
   icons: [{ rel: "icon", url: "/ester-1.png" }],
   description:
     "Författaren Ester Mohlén besöker TeWe's konditori i Söderhamn. Denna gång bjuds det på läsning ur hennes bok Midnattsregn. Boken tar upp ämnen som missbruk, psykisk ohälsa och relationsvåld. Utöver det kommer Ester att tala om hennes författarskap. Det bjuds även på mat och fika. Varmt välkommen!",
