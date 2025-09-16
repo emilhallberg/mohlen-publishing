@@ -38,9 +38,9 @@ export default function Event() {
         <p className="mt-3">
           <b>Var?</b> White Brig Guesthouse - Orangeriet
           <br />
-          <b>När?</b> 13 mars kl. 16-18
+          <b>När?</b> 8 oktober kl. 17-20
         </p>
-        <p className="mt-3">
+        <p className="mt-3">add -
           Anmälan sker genom formuläret nedan och vi uppskattar att de som bokar
           dyker upp på eventet. Återkom gärna i tid om du och ditt sällskap får
           förhinder.
