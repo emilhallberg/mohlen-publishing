@@ -106,13 +106,16 @@ export default function Home() {
           <div className="grid w-[330px] gap-3">
             <Image
               className="w-full h-auto"
-              src="/2025-05-17.jpeg"
-              alt="2025-05-17"
+              src="/2025-10-08-1.jpg"
+              alt="2025-03-13"
               width={0}
               height={0}
               sizes="350"
               priority
             />
+            <Link href="/event/2025-10-08" className="w-full">
+              <Button>Läs mer</Button>
+            </Link>
           </div>
         </span>
       </section>
