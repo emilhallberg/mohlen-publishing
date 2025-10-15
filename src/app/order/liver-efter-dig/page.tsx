@@ -8,10 +8,10 @@ import OrderForm from "@/compounds/OrderForm";
 import Section from "@/components/Section";
 
 export const metadata: Metadata = {
-  title: "Midnattsregn",
-  icons: [{ rel: "icon", url: "/book-2.png" }],
+  title: "Liver efter dig",
+  icons: [{ rel: "icon", url: "/ester-1.jpeg" }],
   description:
-    "Margaret Love lever med en lyhörd tystnad och ett osynligt hopp inom sig. En natt i midnatts regnet möter hon Nicolas Scott som snabbt blir hennes allting. Livet blir plötsligt värt att leva, bara tanken av honom får henne att le. Från ingenstans vänder deras kärleksfulla relation lika snabbt som ett midnatts regn. Trots detta så slutar Margaret inte att kämpa, hon har ju lovat honom att stanna kvar oavsett vad. ",
+    "Livet efter dig är en berättelse om hur det är att älska någon som bär ett mörker. Men också om att vara den som bär det – och ändå välja ljuset. Det är en roman om försoning, om att hitta hem i någon annan, men först och främst i sig själv.",
 };
 
 export default function Book() {
@@ -21,25 +21,33 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1 text-orange-50">
-        Beställ Liver efter dig - 159 kr
+        Beställ Midnattsregn - 189 kr
       </h1>
-      <Section src="/midnattsregn.png" alt="Midnattsregn">
+      <Section src="/livet-efter-dig.jpeg" alt="Liver efter dig">
         <p className="mt-3">
-          <b>Margaret Love</b> lever med en lyhörd tystnad och ett osynligt hopp
-          inom sig. En natt i midnatts regnet möter hon Nicolas Scott som snabbt
-          blir hennes allting. Livet blir plötsligt värt att leva, bara tanken
-          av honom får henne att le. Från ingenstans vänder deras kärleksfulla
-          relation lika snabbt som ett midnatts regn. Trots detta så slutar
-          Margaret inte att kämpa, hon har ju lovat honom att stanna kvar
-          oavsett vad.
+          <b>Livet efter dig</b> är en berättelse om hur det är att älska någon
+          som bär ett mörker. Men också om att vara den som bär det – och ändå
+          välja ljuset. Det är en roman om försoning, om att hitta hem i någon
+          annan, men först och främst i sig själv.
         </p>
-        <blockquote className="mt-3 pl-4 pr-4 text-center">
-          <p>Kommentar från läsare</p>
-          &#34;Midnattsregn är en mycket djup och emotionell bok som tar en
-          genom en resa med starka känslor av glädje, sorg, ilska, kärlek och
-          igenkänning. Vackert beskrivet där man verkligen kan känna vad
-          huvudkaraktären känner!&#34;
-        </blockquote>
+        <p>
+          Efter att ha överlevt en kärleksrelation som förstörde henne, försöker
+          Margaret att finna sig själv igen. Men traumana förföljer henne
+          ständigt, och hennes mamma faller djupare ner i alkoholmissbruket.
+        </p>
+        <p>
+          Så möter hon Anthony. En ung man som inte bara ser henne, utan känner
+          hennes inre som att han alltid har funnits i hennes hjärta. Med honom
+          känner hon hopp, kanske till och med kärlek. Men de gamla såren som
+          hon bär läker långsamt, och den kärlek som växer mellan dem hotas av
+          det undertryckta.
+        </p>
+        <p>
+          <i>
+            Kan kärlek få en större del i hennes hjärta än den smärta som vilar
+            där?
+          </i>
+        </p>
         <p className="mt-3">
           Fyll i formuläret nedan för att lägga en beställning. Efter att du har
           skickat in din beställning, kommer vi att kontakta dig inom kort för

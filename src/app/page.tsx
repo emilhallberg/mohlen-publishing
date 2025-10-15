@@ -64,6 +64,17 @@ export default function Home() {
       <SubHeader id="order" className="p-6">
         Order
       </SubHeader>
+      <Section src="/livet-efter-dig.jpeg" alt="Liver efter dig">
+        <p>
+          <b>Livet efter dig</b> är en berättelse om hur det är att älska någon
+          som bär ett mörker. Men också om att vara den som bär det – och ändå
+          välja ljuset. Det är en roman om försoning, om att hitta hem i någon
+          annan, men först och främst i sig själv.
+        </p>
+        <Link href="/order/liver-efter-dig" className="flex pt-4">
+          <Button>Beställ här</Button>
+        </Link>
+      </Section>
       <Section src="/midnattsregn.png" alt="Midnattsregn">
         <p>
           <b>Margaret Love</b> lever med en lyhörd tystnad och ett osynligt hopp
@@ -106,14 +117,14 @@ export default function Home() {
           <div className="grid w-[330px] gap-3">
             <Image
               className="w-full h-auto"
-              src="/2025-10-08-1.jpg"
-              alt="2025-03-13"
+              src="/2025-11-06.png"
+              alt="2025-11-06"
               width={0}
               height={0}
               sizes="350"
               priority
             />
-            <Link href="/event/2025-10-08" className="w-full">
+            <Link href="/event/2025-11-06" className="w-full">
               <Button>Läs mer</Button>
             </Link>
           </div>
