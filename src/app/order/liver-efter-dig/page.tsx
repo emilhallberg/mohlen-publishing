@@ -21,7 +21,7 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1 text-orange-50">
-        Beställ Midnattsregn - 189 kr
+        Beställ Livet efter dig - 159 kr
       </h1>
       <Section src="/livet-efter-dig.jpeg" alt="Liver efter dig">
         <p className="mt-3">
@@ -58,7 +58,7 @@ export default function Book() {
         </p>
       </Section>
       <OrderForm>
-        <Input name="product" defaultValue="Midnattsregn" hidden />
+        <Input name="product" defaultValue="Livet efter dig" hidden />
         <Input type="text" name="name" autoComplete="name" required>
           Namn
         </Input>

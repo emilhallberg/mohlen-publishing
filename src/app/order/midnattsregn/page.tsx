@@ -21,7 +21,7 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="flex text-3xl w-full p-6 pt-1 text-orange-50">
-        Beställ Liver efter dig - 159 kr
+        Beställ Midnattsregn - 189 kr
       </h1>
       <Section src="/midnattsregn.png" alt="Midnattsregn">
         <p className="mt-3">
