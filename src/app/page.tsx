@@ -113,7 +113,7 @@ export default function Home() {
         Event
       </SubHeader>
       <section className="w-full p-6 max-w-[1080px] grid gap-6 content-start">
-        <span className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-3">
           <div className="grid w-[330px] gap-3">
             <Image
               className="w-full h-auto"
@@ -128,16 +128,16 @@ export default function Home() {
               <Button>Läs mer</Button>
             </Link>
           </div>
-        </span>
+        </div>
       </section>
 
       <section className="w-full p-6 py-12 max-w-[1080px] grid gap-6 content-start">
         <SubHeader id="media">Media</SubHeader>
-        <span className="flex-wrap gap-3 content-between flex">
+        <div className="flex flex-wrap gap-3 content-between">
           <Preview url="https://www.ht.se/2024-10-08/18-ariga-ester-ger-ut-sin-andra-roman" />
           <Preview url="https://www.ht.se/2024-03-31/17-ariga-ester-ger-ut-en-egen-karleksroman" />
           <Preview url="https://www.madeleineengberg.com" />
-        </span>
+        </div>
       </section>
 
       <div className="h-svh">

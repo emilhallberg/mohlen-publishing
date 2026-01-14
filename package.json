@@ -6,30 +6,32 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --cache --max-warnings=0 --ext .js,.jsx,.ts,.tsx src next.config.mjs eslint.config.mjs",
+    "lint:fix": "npm run lint -- --fix",
+    "types": "tsc -p tsconfig.json --noEmit --pretty false"
   },
   "dependencies": {
-    "jsdom": "^27.0.0",
-    "next": "15.5.5",
-    "nodemailer": "^7.0.9",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "jsdom": "^27.4.0",
+    "next": "16.1.1",
+    "nodemailer": "^7.0.12",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/postcss": "^4.1.18",
     "@types/jsdom": "^27.0.0",
-    "@types/node": "^24",
-    "@types/nodemailer": "^7.0.2",
+    "@types/node": "^25",
+    "@types/nodemailer": "^7.0.5",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.23",
     "eslint": "^9",
-    "eslint-config-next": "15.5.5",
+    "eslint-config-next": "16.1.1",
     "eslint-config-prettier": "^10.1.8",
     "postcss": "^8",
-    "prettier": "^3.6.2",
-    "tailwindcss": "^4.1.14",
+    "prettier": "^3.7.4",
+    "tailwindcss": "^4.1.18",
     "typescript": "^5"
   }
 }

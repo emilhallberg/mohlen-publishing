@@ -1,4 +1,4 @@
-import { JSDOM } from "jsdom";
+import { JSDOM, VirtualConsole } from "jsdom";
 import Link from "next/link";
 import Button from "@/components/Button";
 
@@ -9,7 +9,20 @@ async function extractMetaTags(url: string) {
     const response = await fetch(url);
     const html = await response.text();
 
-    const dom = new JSDOM(html);
+    // Suppress noisy jsdom CSS parsing errors from third-party pages
+    const virtualConsole = new VirtualConsole();
+    virtualConsole.on("jsdomError", (err) => {
+      if (err && typeof err.message === "string") {
+        if (err.message.includes("Could not parse CSS stylesheet")) {
+          return; // ignore benign CSS parse errors
+        }
+      }
+      // Forward other errors to console to aid debugging
+       
+      console.error(err);
+    });
+
+    const dom = new JSDOM(html, { virtualConsole });
     const document = dom.window.document;
 
     const metaTags = Array.from(document.querySelectorAll("meta")).reduce<
@@ -51,13 +64,13 @@ export default async function Preview({ url }: Props) {
     <div className="grid w-[330px] content-start justify-self-center">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={res.image} alt={res.title} className="h-[200px] object-cover" />
-      <span className="grid justify-start gap-3 mt-2">
+      <div className="grid justify-start gap-3 mt-2">
         <h1 className="lg:text-2xl text-xl line-clamp-2">{res.title}</h1>
         <p className="line-clamp-3">{res.description}</p>
         <Link href={url} className="w-max" target="_blank">
           <Button>Läs mer</Button>
         </Link>
-      </span>
+      </div>
     </div>
   );
 }
