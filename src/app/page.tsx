@@ -148,6 +148,7 @@ export default function Home() {
       <section className="w-full p-6 py-12 max-w-[1080px] grid gap-6 content-start">
         <SubHeader id="media">Media</SubHeader>
         <div className="flex flex-wrap gap-3 content-between">
+          <Preview url="https://www.ht.se/artikel/jag-ar-annu-inte-mitt-basta-jag-det-kommer-med-tiden/" />
           <Preview url="https://www.ht.se/2024-10-08/18-ariga-ester-ger-ut-sin-andra-roman" />
           <Preview url="https://www.ht.se/2024-03-31/17-ariga-ester-ger-ut-en-egen-karleksroman" />
           <Preview url="https://www.madeleineengberg.com" />

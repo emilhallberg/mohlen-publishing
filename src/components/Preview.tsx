@@ -1,4 +1,3 @@
-import { JSDOM, VirtualConsole } from "jsdom";
 import Link from "next/link";
 import Button from "@/components/Button";
 
@@ -6,6 +5,9 @@ type Props = { url: string };
 
 async function extractMetaTags(url: string) {
   try {
+    // Dynamically import jsdom to ensure ESM-compatible loading in SSR
+    const { JSDOM, VirtualConsole } = await import("jsdom");
+
     const response = await fetch(url);
     const html = await response.text();
 
