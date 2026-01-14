@@ -117,14 +117,14 @@ export default function Home() {
           <div className="grid w-[330px] gap-3">
             <Image
               className="w-full h-auto"
-              src="/2025-11-06.png"
-              alt="2025-11-06"
+              src="/2026-02-11.png"
+              alt="2025-02-11"
               width={0}
               height={0}
               sizes="350"
               priority
             />
-            <Link href="/event/2025-11-06" className="w-full">
+            <Link href="/event/2026-02-11" className="w-full">
               <Button>Läs mer</Button>
             </Link>
           </div>
