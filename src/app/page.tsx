@@ -117,8 +117,8 @@ export default function Home() {
           <div className="grid w-[330px] gap-3">
             <Image
               className="w-full h-auto"
-              src="/2026-03-18 (1).png"
-              alt="2026-02-04"
+              src="/2026-05-06.png"
+              alt="2026-05-06"
               width={0}
               height={0}
               sizes="350"
@@ -128,26 +128,13 @@ export default function Home() {
               <Button>Läs mer</Button>
             </Link>
           </div>
-          <div className="grid w-[330px] gap-3">
-            <Image
-              className="w-full h-auto"
-              src="/2026-03-26.png"
-              alt="2026-02-04"
-              width={0}
-              height={0}
-              sizes="350"
-              priority
-            />
-            <Link href="/event/2026-03-26" className="w-full">
-              <Button>Läs mer</Button>
-            </Link>
-          </div>
         </div>
       </section>
 
       <section className="w-full p-6 py-12 max-w-[1080px] grid gap-6 content-start">
         <SubHeader id="media">Media</SubHeader>
         <div className="flex flex-wrap gap-3 content-between">
+          <Preview url="https://www.ht.se/2026-03-29/ester-19-skapar-motesplatser-dar-orden-flodar-fulltraff/" />
           <Preview url="https://www.ht.se/artikel/jag-ar-annu-inte-mitt-basta-jag-det-kommer-med-tiden/" />
           <Preview url="https://www.ht.se/2024-10-08/18-ariga-ester-ger-ut-sin-andra-roman" />
           <Preview url="https://www.ht.se/2024-03-31/17-ariga-ester-ger-ut-en-egen-karleksroman" />
