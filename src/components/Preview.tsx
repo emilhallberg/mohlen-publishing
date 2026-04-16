@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Button from "@/components/Button";
+import { unstable_noStore as noStore } from "next/cache";
 
 type Props = { url: string };
 
 async function extractMetaTags(url: string) {
+  noStore();
+
   try {
     // Dynamically import jsdom to ensure ESM-compatible loading in SSR
     const { JSDOM, VirtualConsole } = await import("jsdom");
