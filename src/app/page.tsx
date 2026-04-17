@@ -124,7 +124,7 @@ export default function Home() {
               sizes="350"
               priority
             />
-            <Link href="/event/2026-03-18" className="w-full">
+            <Link href="/event/2026-05-06" className="w-full">
               <Button>Läs mer</Button>
             </Link>
           </div>
