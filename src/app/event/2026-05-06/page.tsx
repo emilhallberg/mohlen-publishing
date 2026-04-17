@@ -32,7 +32,7 @@ export default function Event() {
         <p className="mt-3">
           <b>Var?</b> The White Brig
           <br />
-          <b>När?</b> 26 mars kl. 17-20
+          <b>När?</b> 6 maj kl. 17-20
         </p>
         <p className="mt-3">
           Säkra din plats genom att anmäla dig via formuläret nedan. För 200 kr ingår en generös fikabuffé.
