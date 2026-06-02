@@ -3,6 +3,7 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 
 const playfair = Playfair_Display({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
           <Link href="/#kontakt">Kontakt</Link>
         </nav>
         {children}
+        <Analytics />
       </body>
     </html>
   );
