@@ -8,7 +8,7 @@ import ContactForm from "@/compounds/ContactForm";
 import Input from "@/components/Input";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
-import Preview from "@/components/Preview";
+import Preview, { PreviewMeta } from "@/components/Preview";
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -17,6 +17,61 @@ export const metadata: Metadata = {
   description:
     "Drömmen med Mohlén Publishing är att kunna livnära sig men hennes fokus är framförallt att få tillbringa hennes tid med hennes passioner. Genom Mohlén Publishing kommer Ester att marknadsföra sina litterära verk samtidigt som hon vill inspirera andra individer till att både läsa och skriva, men framförallt visa att ingenting är omöjligt.",
 };
+
+const mediaLinks: Array<{ url: string; fallback: PreviewMeta }> = [
+  {
+    url: "https://www.ht.se/2026-03-29/ester-19-skapar-motesplatser-dar-orden-flodar-fulltraff/",
+    fallback: {
+      title:
+        "Ester, 19, skapar mötesplatser där orden flödar: ”Fullträff” – Hudiksvalls Tidning",
+      description:
+        "I den ombonade lokalen på White Brig har en grupp människor samlats för en av Esters skrivträffar.",
+      image:
+        "https://static.bonniernews.se/ba/173a26c3-1c19-43a8-a086-b5687c4770d1.jpeg?crop=8256%2C4644%2Cx0%2Cy430&width=1200&format=pjpg&auto=avif",
+    },
+  },
+  {
+    url: "https://www.ht.se/artikel/jag-ar-annu-inte-mitt-basta-jag-det-kommer-med-tiden/",
+    fallback: {
+      title:
+        "”Jag är ännu inte mitt bästa jag – det kommer med tiden” – Hudiksvalls Tidning",
+      description:
+        "Ester Mohlén bestämde sig tidigt för att bli författare. Nu har hon redan publicerat sin tredje bok.",
+      image:
+        "https://static.bonniernews.se/ba/6d2f4599-67ff-4cfd-975f-195d16a5db9a.jpg?crop=4959%2C2790%2Cx0%2Cy91&width=1200&format=pjpg&auto=avif",
+    },
+  },
+  {
+    url: "https://www.ht.se/2024-10-08/18-ariga-ester-ger-ut-sin-andra-roman",
+    fallback: {
+      title: "18-åriga Ester ger ut sin andra roman – Hudiksvalls Tidning",
+      description:
+        "I våras gav hon ut sin första roman. Sedan dess har det gått undan för Ester Mohlén.",
+      image:
+        "https://static.bonniernews.se/ba/626e3c19-fd63-4064-a92e-d05ebb7bb0da.jpeg?crop=2500%2C1407%2Cx0%2Cy1&width=1200&format=pjpg&auto=avif",
+    },
+  },
+  {
+    url: "https://www.ht.se/2024-03-31/17-ariga-ester-ger-ut-en-egen-karleksroman",
+    fallback: {
+      title: "17-åriga Ester ger ut en egen kärleksroman – Hudiksvalls Tidning",
+      description:
+        "Skrivandet ger henne energi och har hjälpt henne att må bättre.",
+      image:
+        "https://static.bonniernews.se/ba/6fce2456-a5c0-4019-962c-936a69e9f158.jpeg?crop=5496%2C3092%2Cx0%2Cy0&width=1200&format=pjpg&auto=avif",
+    },
+  },
+  {
+    url: "https://www.madeleineengberg.com",
+    fallback: {
+      title: "Fotograf Madeleine Engberg | Hudiksvall",
+      description:
+        "Fotograf i Hudiksvall med fokus på porträtt, bröllop, scen och dokumentärfoto.",
+      image:
+        "https://static.wixstatic.com/media/6b9db9_19ef56a4f5a94091a0a2ea0c0b8619b2~mv2.jpg/v1/fill/w_2500,h_1219,al_c/6b9db9_19ef56a4f5a94091a0a2ea0c0b8619b2~mv2.jpg",
+    },
+  },
+];
 
 export default function Home() {
   return (
@@ -134,11 +189,13 @@ export default function Home() {
       <section className="w-full p-6 py-12 max-w-[1080px] grid gap-6 content-start">
         <SubHeader id="media">Media</SubHeader>
         <div className="flex flex-wrap gap-3 content-between">
-          <Preview url="https://www.ht.se/2026-03-29/ester-19-skapar-motesplatser-dar-orden-flodar-fulltraff/" />
-          <Preview url="https://www.ht.se/artikel/jag-ar-annu-inte-mitt-basta-jag-det-kommer-med-tiden/" />
-          <Preview url="https://www.ht.se/2024-10-08/18-ariga-ester-ger-ut-sin-andra-roman" />
-          <Preview url="https://www.ht.se/2024-03-31/17-ariga-ester-ger-ut-en-egen-karleksroman" />
-          <Preview url="https://www.madeleineengberg.com" />
+          {mediaLinks.map((link) => (
+            <Preview
+              key={link.url}
+              url={link.url}
+              fallback={link.fallback}
+            />
+          ))}
         </div>
       </section>
 

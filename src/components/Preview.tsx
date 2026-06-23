@@ -1,69 +1,92 @@
 import Link from "next/link";
 import Button from "@/components/Button";
-import { unstable_noStore as noStore } from "next/cache";
 
-type Props = { url: string };
+export type PreviewMeta = {
+  title: string;
+  description: string;
+  image: string;
+};
 
-async function extractMetaTags(url: string) {
-  noStore();
+type Props = {
+  url: string;
+  fallback: PreviewMeta;
+};
+
+function getAttribute(tag: string, attribute: string) {
+  const match = tag.match(new RegExp(`${attribute}=["']([^"']+)["']`, "i"));
+  return match?.[1];
+}
+
+function resolveUrl(value: string | undefined, baseUrl: string) {
+  if (!value) return undefined;
 
   try {
-    // Dynamically import jsdom to ensure ESM-compatible loading in SSR
-    const { JSDOM, VirtualConsole } = await import("jsdom");
-
-    const response = await fetch(url);
-    const html = await response.text();
-
-    // Suppress noisy jsdom CSS parsing errors from third-party pages
-    const virtualConsole = new VirtualConsole();
-    virtualConsole.on("jsdomError", (err) => {
-      if (err && typeof err.message === "string") {
-        if (err.message.includes("Could not parse CSS stylesheet")) {
-          return; // ignore benign CSS parse errors
-        }
-      }
-      // Forward other errors to console to aid debugging
-       
-      console.error(err);
-    });
-
-    const dom = new JSDOM(html, { virtualConsole });
-    const document = dom.window.document;
-
-    const metaTags = Array.from(document.querySelectorAll("meta")).reduce<
-      Record<string, string>
-    >((tags, meta) => {
-      const name =
-        meta.getAttribute("name") ||
-        meta.getAttribute("property") ||
-        meta.getAttribute("itemprop");
-
-      const content = meta.getAttribute("content");
-
-      if (name && content) tags[name] = content;
-
-      return tags;
-    }, {});
-
-    return {
-      title:
-        document.title || metaTags["og:title"] || metaTags["twitter:title"],
-      description:
-        metaTags.description ||
-        metaTags["og:description"] ||
-        metaTags["twitter:description"],
-      image:
-        metaTags.image || metaTags["og:image"] || metaTags["twitter:image"],
-    };
-  } catch (error) {
-    console.error("Error fetching Open Graph details", error);
+    return new URL(value, baseUrl).toString();
+  } catch {
+    return undefined;
   }
 }
 
-export default async function Preview({ url }: Props) {
-  const res = await extractMetaTags(url);
+function getTitle(html: string) {
+  return html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim();
+}
 
-  if (!res) return null;
+function extractMetaTags(html: string) {
+  return Array.from(html.matchAll(/<meta\b[^>]*>/gi)).reduce<
+    Record<string, string>
+  >((tags, [tag]) => {
+    const name =
+      getAttribute(tag, "name") ||
+      getAttribute(tag, "property") ||
+      getAttribute(tag, "itemprop");
+    const content = getAttribute(tag, "content");
+
+    if (name && content) tags[name] = content;
+
+    return tags;
+  }, {});
+}
+
+async function getPreviewMeta(url: string, fallback: PreviewMeta) {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        accept: "text/html,application/xhtml+xml",
+        "user-agent": "Mohlén Publishing link preview",
+      },
+      next: { revalidate: 60 * 60 * 24 },
+    });
+
+    if (!response.ok) return fallback;
+
+    const html = await response.text();
+    const metaTags = extractMetaTags(html);
+
+    return {
+      title:
+        metaTags["og:title"] ||
+        metaTags["twitter:title"] ||
+        getTitle(html) ||
+        fallback.title,
+      description:
+        metaTags.description ||
+        metaTags["og:description"] ||
+        metaTags["twitter:description"] ||
+        fallback.description,
+      image:
+        resolveUrl(
+          metaTags.image || metaTags["og:image"] || metaTags["twitter:image"],
+          url,
+        ) || fallback.image,
+    };
+  } catch (error) {
+    console.error("Error fetching Open Graph details", error);
+    return fallback;
+  }
+}
+
+export default async function Preview({ url, fallback }: Props) {
+  const res = await getPreviewMeta(url, fallback);
 
   return (
     <div className="grid w-[330px] content-start justify-self-center">
