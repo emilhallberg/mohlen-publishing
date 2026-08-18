@@ -47,7 +47,7 @@ export default function EventForm({ children, hidden = false }: Props) {
   if (error) {
     return (
       <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
-        Det gick tyvärr inte lägga beställningen just nu. Testa igen eller
+        Det gick tyvärr inte att skicka anmälan just nu. Testa igen eller
         kontakta mig på <MailLink />.
         <br />
         <br />
@@ -59,7 +59,7 @@ export default function EventForm({ children, hidden = false }: Props) {
   if (loading) {
     return (
       <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
-        Lägger beställning...
+        Skickar anmälan...
       </p>
     );
   }
@@ -67,8 +67,8 @@ export default function EventForm({ children, hidden = false }: Props) {
   if (success) {
     return (
       <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
-        Tack för din beställning! Jag kontaktar dig för mer information om
-        leverans och betalning. Om ni har några frågor så tveka inte att
+        Tack för din anmälan! Jag kontaktar dig med mer information om
+        evenemanget och betalningen. Om du har några frågor så tveka inte att
         kontakta mig på <MailLink />.
       </p>
     );
