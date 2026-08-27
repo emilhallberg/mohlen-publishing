@@ -18,6 +18,32 @@ export const metadata: Metadata = {
     "Drömmen med Mohlén Publishing är att kunna livnära sig men hennes fokus är framförallt att få tillbringa hennes tid med hennes passioner. Genom Mohlén Publishing kommer Ester att marknadsföra sina litterära verk samtidigt som hon vill inspirera andra individer till att både läsa och skriva, men framförallt visa att ingenting är omöjligt.",
 };
 
+export const revalidate = 3600;
+
+const events = [
+  {
+    href: "/event/2026-09-17",
+    image: "/2026-09-17.png",
+    alt: "Jubileum för Midnattsregn",
+    buttonLabel: "Läs mer och anmäl dig",
+    endsAt: "2026-09-17T20:00:00+02:00",
+  },
+  {
+    href: "/event/bokklubbar-hosten-2026",
+    image: "/mohlens-bokklubbar-2026.png",
+    alt: "Mohléns Bokklubbar hösten 2026",
+    buttonLabel: "Läs mer och anmäl dig",
+    endsAt: "2026-11-30T23:59:59+01:00",
+  },
+  {
+    href: "/event/2026-05-06",
+    image: "/2026-05-06.png",
+    alt: "Poesikväll i vårens tecken",
+    buttonLabel: "Läs mer",
+    endsAt: "2026-05-06T20:00:00+02:00",
+  },
+];
+
 const mediaLinks: Array<{ url: string; fallback: PreviewMeta }> = [
   {
     url: "https://www.ht.se/2026-03-29/ester-19-skapar-motesplatser-dar-orden-flodar-fulltraff/",
@@ -74,6 +100,10 @@ const mediaLinks: Array<{ url: string; fallback: PreviewMeta }> = [
 ];
 
 export default function Home() {
+  const upcomingEvents = events.filter(
+    (event) => new Date(event.endsAt) >= new Date(),
+  );
+
   return (
     <main className="grid auto-rows-max-content justify-center min-h-screen">
       <section className="h-screen grid auto-rows-min place-content-center place-items-center gap-7">
@@ -169,48 +199,22 @@ export default function Home() {
       </SubHeader>
       <section className="w-full p-6 max-w-[1080px] grid gap-6 content-start">
         <div className="flex flex-wrap gap-3">
-          <div className="grid w-[330px] gap-3">
-            <Image
-              className="w-full h-auto"
-              src="/2026-09-17.png"
-              alt="Jubileum för Midnattsregn"
-              width={0}
-              height={0}
-              sizes="350"
-              priority
-            />
-            <Link href="/event/2026-09-17" className="w-full">
-              <Button>Läs mer och anmäl dig</Button>
-            </Link>
-          </div>
-          <div className="grid w-[330px] gap-3">
-            <Image
-              className="w-full h-auto"
-              src="/mohlens-bokklubbar-2026.png"
-              alt="Mohléns Bokklubbar hösten 2026"
-              width={0}
-              height={0}
-              sizes="350"
-              priority
-            />
-            <Link href="/event/bokklubbar-hosten-2026" className="w-full">
-              <Button>Läs mer och anmäl dig</Button>
-            </Link>
-          </div>
-          <div className="grid w-[330px] gap-3">
-            <Image
-              className="w-full h-auto"
-              src="/2026-05-06.png"
-              alt="2026-05-06"
-              width={0}
-              height={0}
-              sizes="350"
-              priority
-            />
-            <Link href="/event/2026-05-06" className="w-full">
-              <Button>Läs mer</Button>
-            </Link>
-          </div>
+          {upcomingEvents.map((event) => (
+            <div key={event.href} className="grid w-[330px] gap-3">
+              <Image
+                className="w-full h-auto"
+                src={event.image}
+                alt={event.alt}
+                width={0}
+                height={0}
+                sizes="350"
+                priority
+              />
+              <Link href={event.href} className="w-full">
+                <Button>{event.buttonLabel}</Button>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 
