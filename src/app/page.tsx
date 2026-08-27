@@ -172,6 +172,20 @@ export default function Home() {
           <div className="grid w-[330px] gap-3">
             <Image
               className="w-full h-auto"
+              src="/2026-09-17.png"
+              alt="Jubileum för Midnattsregn"
+              width={0}
+              height={0}
+              sizes="350"
+              priority
+            />
+            <Link href="/event/2026-09-17" className="w-full">
+              <Button>Läs mer och anmäl dig</Button>
+            </Link>
+          </div>
+          <div className="grid w-[330px] gap-3">
+            <Image
+              className="w-full h-auto"
               src="/mohlens-bokklubbar-2026.png"
               alt="Mohléns Bokklubbar hösten 2026"
               width={0}
