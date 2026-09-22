@@ -9,7 +9,7 @@ import Input from "@/components/Input";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
 import Preview, { PreviewMeta } from "@/components/Preview";
-import Image from "next/image";
+import EventsSection, { EventSummary } from "@/compounds/EventsSection";
 
 export const metadata: Metadata = {
   title: "Mohlén Publishing",
@@ -20,26 +20,48 @@ export const metadata: Metadata = {
 
 export const revalidate = 3600;
 
-const events = [
+const events: EventSummary[] = [
+  {
+    href: "/event/2026-10-16",
+    title: "Ester Mohlén på Lycklitt 2026",
+    startsAt: "2026-10-16T14:00:00+02:00",
+    endsAt: "2026-10-16T14:45:00+02:00",
+    month: "Okt",
+    day: "16",
+    dateLabel: "16 oktober 2026",
+    time: "14:00–14:45",
+    location: "Lycklitt 2026",
+  },
   {
     href: "/event/2026-09-17",
-    image: "/2026-09-17.png",
-    alt: "Jubileum för Midnattsregn",
-    buttonLabel: "Läs mer och anmäl dig",
+    title: "Jubileum för Midnattsregn",
+    startsAt: "2026-09-17T18:00:00+02:00",
+    month: "Sep",
+    day: "17",
+    dateLabel: "17 september 2026",
+    time: "18:00–20:00",
+    location: "TeWe’s Konditori i Hudiksvall",
     endsAt: "2026-09-17T20:00:00+02:00",
   },
   {
     href: "/event/bokklubbar-hosten-2026",
-    image: "/mohlens-bokklubbar-2026.png",
-    alt: "Mohléns Bokklubbar hösten 2026",
-    buttonLabel: "Läs mer och anmäl dig",
+    title: "Mohléns Bokklubbar",
+    startsAt: "2026-09-01T00:00:00+02:00",
+    month: "Sep–nov",
+    dateLabel: "September till november 2026",
+    time: "Datum meddelas",
+    location: "Hudiksvall",
     endsAt: "2026-11-30T23:59:59+01:00",
   },
   {
     href: "/event/2026-05-06",
-    image: "/2026-05-06.png",
-    alt: "Poesikväll i vårens tecken",
-    buttonLabel: "Läs mer",
+    title: "Poesikväll i vårens tecken",
+    startsAt: "2026-05-06T17:00:00+02:00",
+    month: "Maj",
+    day: "6",
+    dateLabel: "6 maj 2026",
+    time: "17:00–20:00",
+    location: "The White Brig i Hudiksvall",
     endsAt: "2026-05-06T20:00:00+02:00",
   },
 ];
@@ -100,50 +122,48 @@ const mediaLinks: Array<{ url: string; fallback: PreviewMeta }> = [
 ];
 
 export default function Home() {
-  const upcomingEvents = events.filter(
-    (event) => new Date(event.endsAt) >= new Date(),
-  );
-
   return (
     <main className="grid auto-rows-max-content justify-center min-h-screen">
       <section className="h-screen grid auto-rows-min place-content-center place-items-center gap-7">
         <Header>Mohlén Publishing</Header>
         <SubHeader>Litteratur av Ester Mohlén</SubHeader>
       </section>
-      <Section src="/ester-1.jpeg" alt="Ester Mohlén" reverse>
+      <Section src="/ester-4.jpg" alt="Ester Mohlén" reverse>
         <h2 className="text-3xl uppercase">Ester Mohlén</h2>
         <p>
-          Den 18-åriga författaren frän Hälsingland vars litterära verk lämnar
-          läsarna i ett djupt känslohav. Något som Ester värdesätter i sitt
-          författarskap är ärlighet, de litterära verk som hon har skapat vore
-          inte densamma utan hennes ärliga språk.
+          Ester Mohlén är en ung författare från Hälsingland. Hon debuterade i
+          mars 2023 med romanen Phillipe & Charlotte, följd av Midnattsregn,
+          Livet efter dig och senast Rick Dahl.
         </p>
-        <blockquote>
-          &#34;För mig spelar det ingen roll vad jag tjänar pä mina böcker, det
-          som spelar roll är att jag fär göra det jag brinner för, livet
-          ut.&#34;
-        </blockquote>
         <p>
-          Mohlén Publishing grundades i december 2023 efter mänga är av
-          drömmande. Det viktigaste för Ester är att kraften av litteraturen
-          fortsätter ha betydelse för världens alla människor.
+          I sitt skrivande rör hon sig nära det sårbara och ärliga, med ett
+          särskilt fokus på relationer och karaktärernas inre liv. Hennes
+          berättelser präglas av ett känsligt och närvarande språk där det
+          mellanmänskliga står i centrum.
+        </p>
+        <p>
+          Utöver sitt författarskap arrangerar hon poesikvällar, skrivworkshops
+          och föreläsningar runt om i Sverige. Genom dessa skapar hon rum för
+          både reflektion och eget skapande, där deltagarna bjuds in att
+          utforska sina egna uttryck.
         </p>
       </Section>
       <Section src="/book.jpeg" alt="Bok">
+        <h2 className="text-3xl uppercase">MOHLÉN PUBLISHING</h2>
         <p>
-          Kärleken för litteratur har alltid funnits inom Ester. Under hela
-          hennes liv har hon talat genom kreativitet, främst genom text. När hon
-          var tretton är började hon skriva pà sin första riktiga bok och när
-          hon var 17 àr gav hon ut sin debutroman.
+          Mohlén Publishing grundades i december 2023 av författaren Ester
+          Mohlén, ur en långvarig dröm om att skapa ett eget förlag.
         </p>
-        <blockquote>
-          &#34;Jag skulle aldrig kunna leva utan litteratur. Ord är det
-          starkaste som finns och jag är tacksam för att jag är en av dem som
-          försár det.&#34;
-        </blockquote>
         <p>
-          Det som gör Esters författarskap sà unikt är hennes passion. Oavsett
-          vad som händer kommer hon aldrig sluta skriva, det är en del av henne.
+          Sedan starten har verksamheten vuxit snabbt, med flera utgivna titlar,
+          återkommande evenemang och en växande läsekrets. Förlaget är idag en
+          plattform för både litterärt skapande och möten mellan människor.
+        </p>
+        <p>
+          Kärnan i Mohlén Publishing är en stark tro på litteraturens kraft –
+          att berättelser kan beröra, spegla och skapa förändring. Med passion
+          som drivkraft verkar förlaget för att bidra till ett samhälle där
+          kreativitet får ta plats och lyfta människor.
         </p>
       </Section>
       <SubHeader id="order" className="p-6">
@@ -194,40 +214,28 @@ export default function Home() {
         </Link>
       </Section>
 
-      <SubHeader id="event" className="p-6">
-        Event
-      </SubHeader>
-      <section className="w-full p-6 max-w-[1080px] grid gap-6 content-start">
-        <div className="flex flex-wrap gap-3">
-          {upcomingEvents.map((event) => (
-            <div key={event.href} className="grid w-[330px] gap-3">
-              <Image
-                className="w-full h-auto"
-                src={event.image}
-                alt={event.alt}
-                width={0}
-                height={0}
-                sizes="350"
-                priority
-              />
-              <Link href={event.href} className="w-full">
-                <Button>{event.buttonLabel}</Button>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
+      <EventsSection events={events} />
 
       <section className="w-full p-6 py-12 max-w-[1080px] grid gap-6 content-start">
         <SubHeader id="media">Media</SubHeader>
         <div className="flex flex-wrap gap-3 content-between">
           {mediaLinks.map((link) => (
-            <Preview
-              key={link.url}
-              url={link.url}
-              fallback={link.fallback}
-            />
+            <Preview key={link.url} url={link.url} fallback={link.fallback} />
           ))}
+        </div>
+      </section>
+
+      <section
+        id="instagram"
+        aria-label="Mohlén Publishing på Instagram"
+        className="w-full max-w-[1080px] scroll-mt-20 p-6 py-12"
+      >
+        <div className="w-full bg-transparent [container-type:inline-size]">
+          <iframe
+            src="https://www.instagram.com/mohlenpublishing/embed/"
+            title="Mohlén Publishing på Instagram"
+            className="block h-[calc(66.667cqw+220px)] w-full border-0 bg-transparent"
+          />
         </div>
       </section>
 
