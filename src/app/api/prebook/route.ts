@@ -17,6 +17,7 @@ export const POST = async (request: NextRequest) => {
 
   const formData = await request.formData();
 
+  const product = formData.get("product") ?? "Midnattsregn";
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const phone = formData.get("phone") as string;
@@ -24,16 +25,24 @@ export const POST = async (request: NextRequest) => {
   const delivery = formData.get("delivery") as string;
   const comment = formData.get("comment") as string;
 
-  if (!name || !email || !quantity || !delivery) {
-    return NextResponse.json({ message: "Invalid order" }, { status: 500 });
+  if (
+    !name ||
+    !email ||
+    !quantity ||
+    !delivery ||
+    !Number.isSafeInteger(Number(quantity)) ||
+    Number(quantity) < 1 ||
+    (product !== "Rick Dahl" && product !== "Midnattsregn")
+  ) {
+    return NextResponse.json({ message: "Invalid order" }, { status: 400 });
   }
 
   const orderId = Date.now();
 
-  const subject = `FÖRBOKNING [${orderId}] - Midnattsregn - ${quantity}`;
+  const subject = `FÖRBOKNING [${orderId}] - ${product} - ${quantity}`;
 
   const text = `
-    En förbokning på ${quantity} exemplar har lagts på Midnattsregn.
+    En förbokning på ${quantity} exemplar har lagts på ${product}.
     
     Kontaktuppgifter till köpare:
     Namn: ${name}

@@ -45,7 +45,7 @@ export default function PrebookForm({ children }: Props) {
   if (error) {
     return (
       <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
-        Det gick tyvärr inte lägga beställningen just nu. Testa igen eller
+        Det gick tyvärr inte att lägga förbokningen just nu. Testa igen eller
         kontakta mig på <MailLink />.
         <br />
         <br />
@@ -57,7 +57,7 @@ export default function PrebookForm({ children }: Props) {
   if (loading) {
     return (
       <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
-        Lägger beställning...
+        Skickar förbokning...
       </p>
     );
   }
@@ -65,7 +65,7 @@ export default function PrebookForm({ children }: Props) {
   if (success) {
     return (
       <p className="w-full p-6 max-w-[1080px] text-justify lg:text-left">
-        Tack för din beställning! Jag kontaktar dig för mer information om
+        Tack för din förbokning! Jag kontaktar dig för mer information om
         leverans och betalning. Om ni har några frågor så tveka inte att
         kontakta mig på <MailLink />.
       </p>

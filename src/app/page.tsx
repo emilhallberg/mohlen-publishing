@@ -169,6 +169,17 @@ export default function Home() {
       <SubHeader id="order" className="p-6">
         Order
       </SubHeader>
+      <Section src="/rick-dahl.png" alt="Rick Dahl av Ester Mohlén">
+        <h2 className="text-3xl uppercase">Rick Dahl</h2>
+        <p>Förboka den nya boken av Ester Mohlén.</p>
+        <p className="text-xl">199 kr</p>
+        <Link
+          href="/order/rick-dahl"
+          className="mt-4 w-fit px-3 py-4 border border-orange-50 text-sm text-orange-50 hover:text-orange-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        >
+          Förboka här
+        </Link>
+      </Section>
       <Section src="/livet-efter-dig.jpeg" alt="Liver efter dig">
         <p>
           <b>Livet efter dig</b> är en berättelse om hur det är att älska någon
