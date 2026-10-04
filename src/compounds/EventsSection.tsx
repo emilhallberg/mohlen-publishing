@@ -3,8 +3,8 @@ import Link from "next/link";
 export type EventSummary = {
   href: string;
   title: string;
-  startsAt: string;
-  endsAt: string;
+  startsAt?: string;
+  endsAt?: string;
   month: string;
   day?: string;
   dateLabel: string;
@@ -15,10 +15,11 @@ export type EventSummary = {
 export default function EventsSection({ events }: { events: EventSummary[] }) {
   const now = new Date().getTime();
   const upcomingEvents = events
-    .filter((event) => new Date(event.endsAt).getTime() >= now)
+    .filter((event) => !event.endsAt || new Date(event.endsAt).getTime() >= now)
     .sort(
       (a, b) =>
-        new Date(a.startsAt).getTime() - new Date(b.startsAt).getTime(),
+        (a.startsAt ? new Date(a.startsAt).getTime() : Infinity) -
+        (b.startsAt ? new Date(b.startsAt).getTime() : Infinity),
     );
 
   return (
@@ -67,7 +68,9 @@ export default function EventsSection({ events }: { events: EventSummary[] }) {
                   <span className="text-lg leading-snug uppercase">
                     {event.title}
                   </span>
-                  <span className="text-sm leading-relaxed">{event.location}</span>
+                  <span className="text-sm leading-relaxed">
+                    {event.location}
+                  </span>
                 </span>
                 <span aria-hidden="true" className="text-2xl">
                   →

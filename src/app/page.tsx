@@ -45,13 +45,11 @@ const events: EventSummary[] = [
   },
   {
     href: "/event/bokklubbar-hosten-2026",
-    title: "Mohléns Bokklubbar",
-    startsAt: "2026-09-01T00:00:00+02:00",
-    month: "Sep–nov",
-    dateLabel: "September till november 2026",
-    time: "Datum meddelas",
-    location: "Hudiksvall",
-    endsAt: "2026-11-30T23:59:59+01:00",
+    title: "Mohléns Bokklubb",
+    month: "Bok",
+    dateLabel: "Återkommande bokklubb",
+    time: "100 kr/tillfälle",
+    location: "Anmäl dig via hemsidan eller DM",
   },
   {
     href: "/event/2026-05-06",
