@@ -22,6 +22,28 @@ export const revalidate = 3600;
 
 const events: EventSummary[] = [
   {
+    href: "/event/2026-11-14",
+    title: "Boksignering med Ester Mohlén",
+    startsAt: "2026-11-14T12:00:00+01:00",
+    endsAt: "2026-11-14T23:59:59+01:00",
+    month: "Nov",
+    day: "14",
+    dateLabel: "14 november 2026",
+    time: "12:00",
+    location: "Books 26 i Hudiksvall",
+  },
+  {
+    href: "/event/2026-11-26",
+    title: "Poesikväll med Ester Mohlén",
+    startsAt: "2026-11-26T18:00:00+01:00",
+    endsAt: "2026-11-26T20:00:00+01:00",
+    month: "Nov",
+    day: "26",
+    dateLabel: "26 november 2026",
+    time: "18:00–20:00",
+    location: "Books 26 i Hudiksvall · 250 kr inkl. fika",
+  },
+  {
     href: "/event/2026-10-16",
     title: "Ester Mohlén på Lycklitt 2026",
     startsAt: "2026-10-16T14:00:00+02:00",
