@@ -13,8 +13,7 @@ export default function OrderLayout({
         <ul className="text-orange-50">
           <li>~ Fri returrätt med direkt återbetalning.</li>
           <li>
-            ~ Leveranstiden är 2-5 arbetsdagar. För förbokningar meddelas
-            leveranstiden separat.
+            ~ Leveranstiden är 2-5 arbetsdagar.
           </li>
           <li>~ Kundservice dygnet runt.</li>
           <li>~ Betalning via Swish eller kortbetalning.</li>

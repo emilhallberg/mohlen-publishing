@@ -5,14 +5,15 @@ import Input from "@/components/Input";
 import Section from "@/components/Section";
 import Select from "@/components/Select";
 import Textarea from "@/components/Textarea";
-import PrebookForm from "@/compounds/PrebookForm";
+import OrderForm from "@/compounds/OrderForm";
+import RickDahlDescription from "@/compounds/RickDahlDescription";
 
 export const metadata: Metadata = {
-  title: "Förboka Rick Dahl | Mohlén Publishing",
-  description: "Förboka Rick Dahl, den nya boken av Ester Mohlén, för 199 kr.",
+  title: "Beställ Rick Dahl | Mohlén Publishing",
+  description: "Beställ Rick Dahl, den nya boken av Ester Mohlén, för 199 kr.",
   openGraph: {
-    title: "Förboka Rick Dahl – 199 kr",
-    description: "Den nya boken av Ester Mohlén. Förboka ditt exemplar här.",
+    title: "Beställ Rick Dahl – 199 kr",
+    description: "Den nya boken av Ester Mohlén. Beställ ditt exemplar här.",
   },
 };
 
@@ -23,16 +24,16 @@ export default function Book() {
         Tillbaka till startsidan
       </Link>
       <h1 className="text-3xl w-full p-6 pt-1 text-orange-50">
-        Förboka Rick Dahl – 199 kr
+        Beställ Rick Dahl – 199 kr
       </h1>
-      <Section src="/rick-dahl.png" alt="Rick Dahl av Ester Mohlén">
-        <p>Förboka den nya boken Rick Dahl av Ester Mohlén för 199 kr.</p>
+      <Section src="/rick-dahl.jpg" alt="Rick Dahl av Ester Mohlén">
+        <RickDahlDescription />
         <p>
-          Fyll i formuläret nedan för att förboka ditt exemplar. Jag kontaktar
+          Fyll i formuläret nedan för att beställa ditt exemplar. Jag kontaktar
           dig med mer information om leverans och betalning.
         </p>
       </Section>
-      <PrebookForm>
+      <OrderForm>
         <Input type="hidden" name="product" defaultValue="Rick Dahl" hidden />
         <Input id="name" type="text" name="name" autoComplete="name" required>
           Namn
@@ -68,8 +69,8 @@ export default function Book() {
         <Textarea id="comment" name="comment">
           Övriga önskemål
         </Textarea>
-        <Button type="submit">Förboka Rick Dahl</Button>
-      </PrebookForm>
+        <Button type="submit">Beställ Rick Dahl</Button>
+      </OrderForm>
     </main>
   );
 }
